@@ -43,14 +43,16 @@ body {
         font-size: 40px;
         border-radius: 40px;
 
-        &:hover{
+        &:hover {
             opacity: 0.8;
             cursor: pointer;
         }
-        &.digit{
+
+        &.digit {
             background-color: $digit-btn-color;
         }
-        &.operation{
+
+        &.operation {
             background-color: $operation-btn-color;
         }
     }
