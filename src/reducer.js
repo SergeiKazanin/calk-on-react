@@ -20,6 +20,7 @@ const reducer = (state, { type, payload }) => {
         case 'result':
             return {
                 state, currentOperand: eval(state.currentOperand).toString()
+                
             }
         case 'remove':
             if (state.currentOperand === 0) {
@@ -31,13 +32,6 @@ const reducer = (state, { type, payload }) => {
         case 'clear':
             return {
                 currentOperand: 0
-            }
-        case 'percent':
-            if (state.currentOperand === 0) {
-                return state
-            }
-            return {
-                currentOperand: state.currentOperand.length === 1 ? 0 : state.currentOperand.slice(0, -1)
             }
     }
 }

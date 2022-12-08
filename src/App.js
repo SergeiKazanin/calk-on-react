@@ -10,8 +10,8 @@ function App() {
     <div className='calc-app'>
       <div className='output'>{currentOperand}</div>
       <button style={{ opacity: 0 }}></button>
+      <button style={{ opacity: 0 }}></button>
       <button className='top' onClick={() => dispatch({ type: 'clear' })}>C</button>
-      <button className='top' onClick={() => dispatch({ type: 'result' })}>=</button>
       <button className='top' onClick={() => dispatch({ type: 'remove' })}>
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-backspace" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -22,18 +22,18 @@ function App() {
       <DigitButton digit="1" dispatch={dispatch} />
       <DigitButton digit="2" dispatch={dispatch} />
       <DigitButton digit="3" dispatch={dispatch} />
-      <button className='top' onClick={() => dispatch({ type: 'percent' })}>%</button>
+      <OperationButton operation='/' dispatch={dispatch}/>
       <DigitButton digit="4" dispatch={dispatch} />
       <DigitButton digit="5" dispatch={dispatch} />
       <DigitButton digit="6" dispatch={dispatch} />
-      <OperationButton operation='/' dispatch={dispatch}/>
+      <OperationButton operation='x' dispatch={dispatch}/>
       <DigitButton digit="7" dispatch={dispatch} />
       <DigitButton digit="8" dispatch={dispatch} />
       <DigitButton digit="9" dispatch={dispatch} />
-      <OperationButton operation='x' dispatch={dispatch}/>
+      <OperationButton operation='-' dispatch={dispatch}/>
       <DigitButton digit="0" dispatch={dispatch} />
       <DigitButton digit="." dispatch={dispatch} />
-      <OperationButton operation='-' dispatch={dispatch}/>
+      <button className='top' onClick={() => dispatch({ type: 'result' })}>=</button>
       <OperationButton operation='+' dispatch={dispatch}/>
     </div>
   );
